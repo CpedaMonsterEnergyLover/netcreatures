@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     'CollectionApp',
     'Main',
 
+    'corsheaders'
     'social_django',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,6 +39,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     'social_django.middleware.SocialAuthExceptionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 AUTHENTICATION_BACKENDS = (
@@ -114,3 +116,10 @@ LOGOUT_REDIRECT_URL = '/'
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = config('GOOGLE_OAUTH_CLIENT_ID')
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = config('GOOGLE_OAUTH_CLIENT_SECRET')
+
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = (
+   'http://localhost:8000',
+   'http://127.0.0.1:8000',
+   'chrome-extension://kgafifkmgpbjhnflbjlhaochngjamlgm/'
+)

@@ -30,6 +30,7 @@ class LinkAccount(APIView):
             user = User.objects.get(email=email)
             return JsonResponse(data={
                 'status': 'ok',
+                'username': user.username,
                 'created': False
             }, safe=False)
 
@@ -45,5 +46,6 @@ class LinkAccount(APIView):
 
             return JsonResponse(data={
                 'status': 'ok',
+                'username': user.username,
                 'created': True
             }, safe=False)
