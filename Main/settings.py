@@ -11,7 +11,8 @@ SECRET_KEY = config('DJANGO_SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'rivesuvacrispa.pythonanywhere.com'
+    'rivesuvacrispa.pythonanywhere.com',
+    '127.0.0.1'
 ]
 
 INSTALLED_APPS = [
@@ -99,7 +100,7 @@ USE_I18N = True
 
 USE_TZ = False
 
-STATIC_URL = 'assets'
+STATIC_URL = 'assets/'
 STATIC_ROOT = os.path.join(BASE_DIR, "assets")
 
 STATICFILES_DIRS = [
