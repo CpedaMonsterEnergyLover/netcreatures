@@ -120,7 +120,8 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = config('GOOGLE_OAUTH_CLIENT_SECRET')
 
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
-   'http://localhost:8000',
-   'http://127.0.0.1:8000',
-   'chrome-extension://kgafifkmgpbjhnflbjlhaochngjamlgm'
+    'http://localhost:8000',
+    'http://127.0.0.1:8000',
+    'chrome-extension://kgafifkmgpbjhnflbjlhaochngjamlgm',
+    'rivesuvacrispa.pythonanywhere.com'
 )
