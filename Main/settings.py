@@ -12,7 +12,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'rivesuvacrispa.pythonanywhere.com',
-    '127.0.0.1'
+    '127.0.0.1',
+    'chrome-extension://kgafifkmgpbjhnflbjlhaochngjamlgm'
 ]
 
 INSTALLED_APPS = [
