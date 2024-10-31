@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include 'head.html' %}
+    {% load static %}
+    <script src="{% static 'home/title-animation.js' %}"></script>
+    <script src="{% static 'home/section-scrolling.js' %}"></script>
+<body>
+
+{% include 'header.html' %}
+
+<section id="home" class="vh-100 d-flex align-items-center justify-content-center text-center section">
+    <div>
+        <h1 style="visibility: hidden;" class="title">Welcome to the Digital Realm</h1>
+        <p class="description">Explore, catch, and trade mysterious digital creatures born from the chaos of the internet!</p>
+    </div>
+</section>
+
+<section id="explore" class="vh-100 d-flex align-items-center justify-content-center text-center section">
+    <div>
+        <h1 style="visibility: hidden;" class="title">A Digital World</h1>
+        <p>This dimension is home to magical creatures that inhabit every corner of the internet. They thrive in the chaos of zeros and ones!</p>
+    </div>
+</section>
+
+<section id="curios-queries" class="vh-100 d-flex align-items-center justify-content-center text-center section">
+    <div>
+        <h1 style="visibility: hidden;" class="title">Curios Queries</h1>
+        <ul class="list-unstyled">
+            <li><a href="#" class="question">What are these digital creatures?</a>
+                <div class="answer" style="display:none;">They are the wild inhabitants of cyberspace!</div>
+            </li>
+            <li><a href="#" class="question">How do I catch them?</a>
+                <div class="answer" style="display:none;">Explore the digital realms and engage!</div>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section id="latest-news" class="vh-100 d-flex align-items-center justify-content-center text-center section">
+    <div>
+        <h1 style="visibility: hidden;" class="title">Latest News</h1>
+        <div class="news-container">
+            <div class="news-card">News Item 1</div>
+            <div class="news-card">News Item 2</div>
+            <div class="news-card">News Item 3</div>
+        </div>
+    </div>
+</section>
+
+<section class="vh-100 d-flex align-items-center justify-content-center text-center section">
+    <div>
+        <h1 style="visibility: hidden;" class="title">Dive Into the Digital Abyss</h1>
+        <button class="btn btn-primary">Start Your Adventure</button>
+    </div>
+</section>
+
+
+</body>
+</html>

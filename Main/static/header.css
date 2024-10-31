@@ -1,0 +1,31 @@
+.sticky-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    opacity: 0.75; /* Transparency effect */
+    background-color: #000; /* Solid color to ensure opacity works */
+    height: 10px
+}
+
+/* Styling for the brand name */
+.glitch-text {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: #f0f0f0;
+    font-size: 1.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* Links styling for better readability on a dark background */
+.navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}

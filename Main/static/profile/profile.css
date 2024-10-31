@@ -1,0 +1,70 @@
+/* Profile Sidebar Styling */
+.profile-sidebar {
+    background: rgba(20, 20, 20, 0.8);
+    border-radius: 8px;
+    padding-top: 10px;
+    overflow: hidden; /* Ensures sidebar is not affected by feed height */
+}
+
+.img-fluid {
+    width: 120px;
+    height: 120px;
+    border: 1px solid #00aaff;
+}
+
+.username-title {
+    font-size: 1.5rem;
+    color: #00aaff;
+    font-weight: bold;
+}
+
+.user-email {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Sidebar Button Styling */
+.setting-button {
+    border-color: #00aaff;
+    color: #00aaff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.setting-button:hover {
+    background-color: #00aaff;
+    border-color: #00aaff;
+    color: #000428;
+}
+
+.logout-button {
+    border-color: #ff4d4d;
+    color: #ff4d4d;
+}
+
+.logout-button:hover {
+    background-color: #ff4d4d;
+    color: #fff;
+}
+
+/* Feed Title Styling */
+.feed-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Feed Item Styling */
+.feed-item-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.news-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px;
+    animation: fadeIn 1.5s;
+}
+
+.feed-text {
+    font-size: 1rem;
+}

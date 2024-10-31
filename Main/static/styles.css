@@ -1,0 +1,60 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background: linear-gradient(to right, #000428, #004e92);
+    color: white;
+}
+
+.section {
+    position: relative;
+    overflow: hidden;
+    padding: 0 15px;
+}
+
+.title {
+    font-size: 4rem;
+    animation: fadeIn 2s;
+}
+
+.description {
+    font-size: 1.5rem;
+    animation: slideIn 1s;
+}
+
+.news-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.news-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    flex: 0 0 auto;
+}
+
+.question {
+    cursor: pointer;
+    color: cyan;
+    transition: color 0.3s;
+}
+
+.question:hover {
+    color: lime;
+}
+
+.answer {
+    margin-top: 10px;
+    color: #00ff00;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
