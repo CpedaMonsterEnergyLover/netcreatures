@@ -6,11 +6,13 @@ from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
 from .models import CreatureEncounter, Creature, CreatureInstance
 from django.http import JsonResponse
+from social_django.views import login_required
 
 
 class GetEncounter(APIView):
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
 
+    @login_required()
     def get(self, request):
         user = request.user
 
@@ -38,8 +40,9 @@ class GetEncounter(APIView):
 
 
 class FinishEncounter(APIView):
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
 
+    @login_required()
     def post(self, request):
         user = request.user
         data = json.loads(request.body)
