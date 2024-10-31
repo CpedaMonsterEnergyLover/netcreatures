@@ -97,7 +97,7 @@ USE_I18N = True
 
 USE_TZ = False
 
-STATIC_URL = 'static/'
+STATIC_URL = 's/'
 STATIC_ROOT = 's/'
 
 STATICFILES_DIRS = [
