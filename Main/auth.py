@@ -9,7 +9,9 @@ def extract_token(request):
     if not auth_header or not auth_header.startswith('Bearer '):
         raise AuthenticationFailed('Authorization header missing or invalid.')
 
-    return auth_header.split(' ')[1]
+    token = auth_header.split(' ')[1]
+
+    return token
 
 
 def get_token_email(token):
@@ -21,7 +23,9 @@ def get_token_email(token):
     user_data = response.json()
     email = user_data.get('email')
     if not email:
-        raise AuthenticationFailed('Invalid token')
+        raise AuthenticationFailed('Invalid token data')
+
+    return email
 
 
 def only_authenticated(view_func):
@@ -31,12 +35,12 @@ def only_authenticated(view_func):
         token = extract_token(request)
         email = get_token_email(token)
 
-        user = User.objects.get(email=email)
+        try:
+            user = User.objects.get(email=email)
+            request.user = user
+            return view_func(self, request, *args, **kwargs)
 
-        if not user:
+        except User.DoesNotExist:
             raise AuthenticationFailed('Invalid token')
-
-        request.user = user
-        return view_func(self, request, *args, **kwargs)
 
     return _wrapped_view

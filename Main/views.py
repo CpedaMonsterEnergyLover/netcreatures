@@ -22,7 +22,9 @@ class LinkAccount(APIView):
 
     def post(self, request):
         token = extract_token(request)
+        print(token)
         email = get_token_email(token)
+        print(email)
 
         try:
             user = User.objects.get(email=email)
