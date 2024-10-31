@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.urls import include, path
 from . views import index, profile, collection
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path("", index, name="index"),
@@ -12,4 +14,4 @@ urlpatterns = [
 
     path('auth/', include('social_django.urls', namespace='social')),
 
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
