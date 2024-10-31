@@ -21,7 +21,7 @@ INSTALLED_APPS = [
     'CollectionApp',
     'Main',
 
-    'corsheaders'
+    'corsheaders',
     'social_django',
     'django.contrib.admin',
     'django.contrib.auth',
