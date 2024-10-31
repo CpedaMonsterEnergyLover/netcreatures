@@ -1,0 +1,6 @@
+*.env
+.gitignore
+migrations/
+.idea/
+*.sqlite3
+*.jpg
