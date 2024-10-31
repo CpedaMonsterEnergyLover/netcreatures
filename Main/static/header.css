@@ -8,6 +8,12 @@
     height: 10px
 }
 
+.img-header {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+    padding-bottom: 2px;
+}
 /* Styling for the brand name */
 .glitch-text {
     font-family: 'Courier New', monospace;
