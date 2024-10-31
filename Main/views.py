@@ -5,6 +5,7 @@ from django.http import JsonResponse
 from rest_framework.views import APIView
 
 
+
 def index(request):
     return render(request, "home/home.html")
 
@@ -23,23 +24,24 @@ class LinkAccount(APIView):
         token = extract_token(request)
         email = get_token_email(token)
 
-        user = User.objects.get(email=email)
-        latest_user = User.objects.order_by('-id').first()
-        next_id = latest_user.id + 1 if latest_user is not None else 1
-
-        if user:
+        try:
+            user = User.objects.get(email=email)
             return JsonResponse(data={
                 'status': 'ok',
                 'created': False
             }, safe=False)
 
-        user = User(
-            username=f"NetStalker{next_id}",
-            email=email
-        )
-        user.save()
+        except User.DoesNotExist:
+            latest_user = User.objects.order_by('-id').first()
+            next_id = latest_user.id + 1 if latest_user is not None else 1
 
-        return JsonResponse(data={
-            'status': 'ok',
-            'created': True
-        }, safe=False)
+            user = User(
+                username=f"NetStalker{next_id}",
+                email=email
+            )
+            user.save()
+
+            return JsonResponse(data={
+                'status': 'ok',
+                'created': True
+            }, safe=False)
