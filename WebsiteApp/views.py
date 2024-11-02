@@ -16,6 +16,7 @@ class GetWebsiteSignature(APIView):
 
         parser = WebsiteParser(link)
         domain = parser.extract_netloc()
+        request_err = ""
 
         try:
             signature = WebsiteSignature.objects.get(domain=domain)
@@ -34,12 +35,14 @@ class GetWebsiteSignature(APIView):
                 except WebsiteType.DoesNotExist:
                     pass
 
-            except RequestException:
+            except RequestException as e:
                 signature.accessed = False
+                request_err = e
 
             signature.save()
 
         return JsonResponse(data={
             'status': 'ok',
-            'signature': signature.id
+            'signature': signature.id,
+            'request_err': request_err
         }, safe=False)
