@@ -7,6 +7,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path("", index, name="index"),
     path("", include("CollectionApp.urls")),
+    path("", include("WebsiteApp.urls")),
 
     path('profile/', profile, name="profile"),
     path('collection/', collection, name="collection"),

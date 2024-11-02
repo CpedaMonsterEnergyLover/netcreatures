@@ -3,7 +3,6 @@ import random
 
 from django.utils import timezone
 from rest_framework.views import APIView
-from rest_framework.permissions import IsAuthenticated
 from .models import CreatureEncounter, Creature, CreatureInstance
 from django.http import JsonResponse
 from Main.auth import only_authenticated

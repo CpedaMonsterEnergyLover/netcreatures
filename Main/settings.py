@@ -19,6 +19,7 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     'CollectionApp',
+    'WebsiteApp',
     'Main',
 
     'corsheaders',
